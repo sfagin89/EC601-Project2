@@ -14,7 +14,7 @@ I've managed to 'flatten' the JSON input.
 
 My understanding of how the data is pulled from Twitter and then worked with in Python:
 
-It's pulled as a dictionary. If you then use the json.dumps() function, it converts the data to a string.
+\tIt's pulled as a dictionary. If you then use the json.dumps() function, it converts the data to a string.
 
-Using the json.loads() function on that string then converts it back to a dictionary, so the dumps() function from the example isn't needed if you want the
+\tUsing the json.loads() function on that string then converts it back to a dictionary, so the dumps() function from the example isn't needed if you want the
 value in dictionary format.
