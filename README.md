@@ -6,6 +6,8 @@ https://github.com/twitterdev/Twitter-API-v2-sample-code
 
 Specifically I tested displaying tweets by specifying their tweet ID, as well as counting recent tweets made by a specified user.
 
+This involved figuring out how to get a token from my twitter dev account and then save it as a system environment variable to be used with code without saving the tokens to the code, as that would be a serious security risk.
+
 For the Recent Tweets one, I edited the example code to prompt for input and change the output.
 
 This involved figuring out how Python handles JSON, as the data pulled is in JSON format.
