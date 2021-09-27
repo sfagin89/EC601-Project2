@@ -21,3 +21,5 @@ It's pulled as a dictionary. If you then use the json.dumps() function, it conve
 
 Using the json.loads() function on that string then converts it back to a dictionary, so the dumps() function from the example isn't needed if you want the
 value in dictionary format.
+
+For most purposes, outside of printing the JSON format for testing/debugging, the dictionary type is better, as it allows for accessing data using keys, rather than searching through a string.
