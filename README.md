@@ -9,6 +9,7 @@ Specifically I tested displaying tweets by specifying their tweet ID, as well as
 This involved figuring out how to get a token from my twitter dev account and then save it as a system environment variable to be used with code without saving the tokens to the code, as that would be a serious security risk.
 
 For the Recent Tweets one, I edited the example code to prompt for input and change the output.
+You are now prompted to enter a twitter account name, and then you are shown the total number of tweets that user tweeted in the past week (week is the default time span)
 
 This involved figuring out how Python handles JSON, as the data pulled is in JSON format.
 
