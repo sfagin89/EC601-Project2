@@ -23,3 +23,20 @@ Using the json.loads() function on that string then converts it back to a dictio
 value in dictionary format.
 
 For most purposes, outside of printing the JSON format for testing/debugging, the dictionary type is better, as it allows for accessing data using keys, rather than searching through a string.
+
+Google NLP
+
+Tried some example code to make sure the API was reachable.
+
+First ran Google's Cloud SDK gcloud tool through the command line
+
+Followed this guide: https://cloud.google.com/natural-language/docs/quickstart
+
+God the expected JSON format result. Result: result_test1.json
+
+Next tried running a python program that analyzes the sentiment of input text.
+google-nlp-test1.py
+
+This example was pulled from: https://codelabs.developers.google.com/codelabs/cloud-natural-language-python3#6
+
+Result: "result of running test1 python.txt"
