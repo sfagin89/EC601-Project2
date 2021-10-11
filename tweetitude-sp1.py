@@ -6,7 +6,7 @@ import os
 import json
 from google.cloud import language
 
-twit = input("Please enter the twitter name you want to search for replies to: ")
+twit = input("Please enter the twitter name you want to search a tweet count for: ")
 #twitterer = 'from:' + twit
 twitterer = 'to:' + twit
 
@@ -14,11 +14,27 @@ twitterer = 'to:' + twit
 # export 'TOKEN'='<your_bearer_token>'
 bearer_token = os.environ.get("TOKEN")
 
-##Used to Search Recent Tweets directed at Specified User
+##Used to Search and Count Recent Tweets by Specified Tweeter
+#search_url = "https://api.twitter.com/2/tweets/counts/recent"
 search_url = "https://api.twitter.com/2/tweets/search/recent"
 
-##Used to Search Recent Tweets directed at Specified User
-query_params = {'query': twitterer, 'max_results': '10'}
+##Used to display data about the Specified Tweet
+#search_url = "https://api.twitter.com/2/tweets"
+
+##Used to display data about the user
+#search_url = "https://api.twitter.com/2/users"
+
+##Used to Search and Count Recent Tweets by Specified Tweeter
+#query_params = {'query': twitterer,'granularity': 'day'}
+#query_params = {'query': twitterer,'granularity': 'day'}
+query_params = {'query': twitterer}
+
+##Used to display data about the Specified Tweet
+#query_params = {'ids': "1441446902768177158,1441447738978222081", 'tweet.fields': "lang,author_id"}
+
+##Used to display data about the user
+#query_params = {'ids': "147039284", 'expansions': "pinned_tweet_id", 'tweet.fields': "text"}
+#147039284
 
 def analyze_text_sentiment(text):
     client = language.LanguageServiceClient()
@@ -34,7 +50,6 @@ def analyze_text_sentiment(text):
     )
     for k, v in results.items():
         print(f"{k:10}: {v}")
-    print("\n")
 
 def bearer_oauth(r):
     """
@@ -68,9 +83,9 @@ def main():
     ##Currently only use for Recent Tweet Count
     #print("The total number of Tweets from "+twit+" this week is "+twit_count)
 
-    for item in json_response['data']:
-        text = item['text'].replace("\n\n", "\n")
-        analyze_text_sentiment(text)
+    #for item in json_response['data']:
+    #    text = item['text'].replace("\n\n", "\n")
+    #    analyze_text_sentiment(text)
     #text = json_response['data'][0]['text'].replace("\n\n", "\n")
     #text = text.replace("\n\n", "\n")
     #print(text)
