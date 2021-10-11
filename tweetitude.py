@@ -13,13 +13,17 @@ twitterer = 'from:' + twit
 # export 'TOKEN'='<your_bearer_token>'
 bearer_token = os.environ.get("TOKEN")
 
-search_url = "https://api.twitter.com/2/tweets/counts/recent"
-#search_url = "https://api.twitter.com/2/tweets/"
+##Used to Search and Count Recent Tweets by Specified Tweeter
+#search_url = "https://api.twitter.com/2/tweets/counts/recent"
 
-# Optional params: start_time,end_time,since_id,until_id,next_token,granularity
-#query_params = {'query': 'from:Asmongold','granularity': 'day'}
-query_params = {'query': twitterer,'granularity': 'day'}
-#query_params = {'ids': "ids=1441446902768177158,1441447738978222081",'tweet.fields': "lang,author_id"}
+##Used to display data about the Specified Tweet
+search_url = "https://api.twitter.com/2/tweets"
+
+##Used to Search and Count Recent Tweets by Specified Tweeter
+#query_params = {'query': twitterer,'granularity': 'day'}
+
+##Used to display data about the Specified Tweet
+query_params = {'ids': '1441446902768177158', 'tweet.fields': "lang,author_id"}
 
 def analyze_text_sentiment(text):
     client = language.LanguageServiceClient()
@@ -54,23 +58,21 @@ def connect_to_endpoint(url, params):
 
 
 def main():
+    #Dictionary containing JSON Data
     json_response = connect_to_endpoint(search_url, query_params)
     #print(type(json_response)) ##Prints <class 'dict'>
-    #print(json.dumps(json_response, indent=4, sort_keys=True))
+    print(json.dumps(json_response, indent=4, sort_keys=True))
 
-    sample_object = json.dumps(json_response, indent=4, sort_keys=True)
-    #print(sample_object) ##Prints Formatted JSON Output
-    #print(type(sample_object)) ##Prints <class 'str'>
-    data = json.loads(sample_object)
-    #print(type(data)) ##Prints <class 'dict'>
-    #print(data) ##Prints Flatted JsON dictionary
     print("Counting recent tweets from user: "+twit+"\n")
 
     #fetching data from dictionary
     #print(data.get('meta')) ##Prints {'total_tweet_count': 5}
-    twit_count = str(data['meta']['total_tweet_count'])
 
-    print("The total number of Tweets from "+twit+" this week is "+twit_count)
+    ##Currently only use for Recent Tweet Count
+    #twit_count = str(json_response['meta']['total_tweet_count'])
+
+    ##Currently only use for Recent Tweet Count
+    #print("The total number of Tweets from "+twit+" this week is "+twit_count)
 
     text = "Guido van Rossum is great!"
     analyze_text_sentiment(text)
