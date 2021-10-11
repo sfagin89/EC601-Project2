@@ -1,0 +1,3 @@
+User Story: As a streamer, it's important that I keep my viewers interested and engaged. So I want to see what my viewer base is thinking about my current content and what they seem to want to see next.
+
+MVP: Lists all recent tweets (within last 24 hours) that reference specified user and shows a percentage of negative vs positive comments.
