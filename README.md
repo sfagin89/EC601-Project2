@@ -1,4 +1,30 @@
 # EC601-Project2
+
+-------------------------------------------------------------------------------
+
+TWEETITUDE!
+
+-------------------------------------------------------------------------------
+
+An app that allows users to find out what the average emotional feelings are from other users that @ them. All that's needed is to enter a twitter username and the number of recent tweets mentioning them to count. Then each tweet pulled is run through Google's NLP to determine the general emotional sentiment of the tweet. Each result is weighted, added, and then the overall average is presented to the user, along with a quick summary of what the result means.
+
+To use the progrom, run the following from the command line while in the same directory as the application:
+
+python tweetitude.py
+
+The following python libraries are required in order to run this application:
+
+requests
+os
+json
+google.cloud-language
+
+-------------------------------------------------------------------------------
+
+About the overall Process and Research before developing the App
+
+-------------------------------------------------------------------------------
+
 Testing Twitter API and Google NLP
 
 For this project I tested a few of the example codes available from the twitter API github repository
