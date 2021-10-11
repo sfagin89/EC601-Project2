@@ -2,7 +2,7 @@
 
 -------------------------------------------------------------------------------
 
-##TWEETITUDE!
+## TWEETITUDE!
 
 -------------------------------------------------------------------------------
 
@@ -12,14 +12,14 @@ To use the program, run the following from the command line while in the same di
 
     python tweetitude.py
 
-#####The following python libraries are required in order to run this application:
+##### The following python libraries are required in order to run this application:
 
 *requests
 *os
 *json
 *google.cloud-language
 
-#####Links used for reference while writing this application
+##### Links used for reference while writing this application
 *https://cloud.google.com/natural-language/docs/basics
 *https://developer.twitter.com/en/docs/twitter-api/tweets/search/api-reference/get-tweets-search-recent
 *https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference/get-users#cURL
@@ -32,7 +32,7 @@ To use the program, run the following from the command line while in the same di
 
 -------------------------------------------------------------------------------
 
-####About the overall Process and Research before developing the App
+#### About the overall Process and Research before developing the App
 
 -------------------------------------------------------------------------------
 
