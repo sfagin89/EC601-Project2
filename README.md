@@ -12,27 +12,27 @@ To use the program, run the following from the command line while in the same di
 
     python tweetitude.py
 
-##### The following python libraries are required in order to run this application:
+### The following python libraries are required in order to run this application:
 
-*requests
-*os
-*json
-*google.cloud-language
+* requests
+* os
+* json
+* google.cloud-language
 
-##### Links used for reference while writing this application
-*https://cloud.google.com/natural-language/docs/basics
-*https://developer.twitter.com/en/docs/twitter-api/tweets/search/api-reference/get-tweets-search-recent
-*https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference/get-users#cURL
-*https://developer.twitter.com/en/docs/twitter-api/tweets/lookup/api-reference/get-tweets
-*https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
-*https://developer.twitter.com/en/docs/twitter-api/tweets/counts/quick-start/recent-tweet-counts
-*https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/main/Recent-Tweet-Counts/recent_tweet_counts.py
-*https://developer.twitter.com/en/docs/tutorials/step-by-step-guide-to-making-your-first-request-to-the-twitter-api-v2
-*https://github.com/twitterdev/search-tweets-python
+### Links used for reference while writing this application
+* https://cloud.google.com/natural-language/docs/basics
+* https://developer.twitter.com/en/docs/twitter-api/tweets/search/api-reference/get-tweets-search-recent
+* https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference/get-users#cURL
+* https://developer.twitter.com/en/docs/twitter-api/tweets/lookup/api-reference/get-tweets
+* https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
+* https://developer.twitter.com/en/docs/twitter-api/tweets/counts/quick-start/recent-tweet-counts
+* https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/main/Recent-Tweet-Counts/recent_tweet_counts.py
+* https://developer.twitter.com/en/docs/tutorials/step-by-step-guide-to-making-your-first-request-to-the-twitter-api-v2
+* https://github.com/twitterdev/search-tweets-python
 
 -------------------------------------------------------------------------------
 
-#### About the overall Process and Research before developing the App
+## About the overall Process and Research before developing the App
 
 -------------------------------------------------------------------------------
 
