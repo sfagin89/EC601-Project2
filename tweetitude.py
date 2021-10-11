@@ -27,14 +27,19 @@ def analyze_text_sentiment(text):
     response = client.analyze_sentiment(document=document)
 
     sentiment = response.document_sentiment
+    #print(str(sentiment.score))
     results = dict(
         text=text,
         score=f"{sentiment.score:.1%}",
+        scoreINT=sentiment.score,
         magnitude=f"{sentiment.magnitude:.1%}",
+        magnitudeINT=sentiment.magnitude #Not mult 100 b/c using for weight
     )
-    for k, v in results.items():
-        print(f"{k:10}: {v}")
-    print("\n")
+    #for k, v in results.items():
+    #    print(f"{k:10}: {v}")
+    #print("\n")
+
+    return results
 
 def bearer_oauth(r):
     """
@@ -58,6 +63,7 @@ def main():
     json_response = connect_to_endpoint(search_url, query_params)
     #print(type(json_response)) ##Prints <class 'dict'>
     print(json.dumps(json_response, indent=4, sort_keys=True))
+    overallMetric = 0
 
     #print("Counting recent tweets from user: "+twit+"\n")
 
@@ -70,7 +76,16 @@ def main():
 
     for item in json_response['data']:
         text = item['text'].replace("\n\n", "\n")
-        analyze_text_sentiment(text)
+        sentiment = analyze_text_sentiment(text)
+        overallMetric = overallMetric + (sentiment['scoreINT']*sentiment['magnitudeINT'])
+        print("Printing test of dictionary output\n")
+        print(sentiment['text'])
+        print(sentiment['score'])
+        print(sentiment['magnitude'])
+        print("Current Total Metric: "+str(overallMetric)+"\n")
+    overallMetric = f"{(overallMetric/json_response['meta']['result_count']):.1%}"
+    print("Final Metric: "+overallMetric+"\n")
+    #print("Final Metric: "+str(overallMetric/json_response['meta']['result_count'])+"\n")
     #text = json_response['data'][0]['text'].replace("\n\n", "\n")
     #text = text.replace("\n\n", "\n")
     #print(text)
