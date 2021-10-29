@@ -42,7 +42,8 @@ def bearer_oauth(r):
     return r
 
 def connect_to_endpoint():
-    twit = input("Enter the twitter username you want to search for recent tweets about: ")
+    #twit = input("Enter the twitter username you want to search for recent tweets about: ")
+    twit = "asmongold"
     # Used to indicate tweets made by the referenced account
     # twitterer = 'from:' + twit
     # Used to indicate tweets made to the referenced account
