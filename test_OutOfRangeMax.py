@@ -11,8 +11,13 @@ def test_gtMax(capfd):
     tt.input = simulated_input
     tt.print = lambda s: output.append(s)
 
-    out, err = capfd.readouterr()
-    assert out == "Sorry, that's outside of the allowed range. The maximum number of tweets has been set back to the default of 10.\n"
+    tt.connect_to_endpoint()
+
+    output, err = capfd.readouterr()
+    assert output == [
+        "Enter the twitter username you want to search for recent tweets about: ",
+        "What's the maximum number of tweets you want to include in the calculation? (10-100): ",
+        "Sorry, that's outside of the allowed range. The maximum number of tweets has been set back to the default of 10.\n"]
 
 def test_ltMin(capfd):
     input_values = ["asmongold", "5"]
@@ -24,8 +29,13 @@ def test_ltMin(capfd):
     tt.input = simulated_input
     tt.print = lambda s: output.append(s)
 
-    out, err = capfd.readouterr()
-    assert out == "Sorry, that's outside of the allowed range. The maximum number of tweets has been set back to the default of 10.\n"
+    tt.connect_to_endpoint()
+
+    output, err = capfd.readouterr()
+    assert output == [
+        "Enter the twitter username you want to search for recent tweets about: ",
+        "What's the maximum number of tweets you want to include in the calculation? (10-100): ",
+        "Sorry, that's outside of the allowed range. The maximum number of tweets has been set back to the default of 10.\n"]
 
 def test_crct(capfd):
     input_values = ["asmongold", "50"]
@@ -37,5 +47,10 @@ def test_crct(capfd):
     tt.input = simulated_input
     tt.print = lambda s: output.append(s)
 
-    out, err = capfd.readouterr()
-    assert out != "Sorry, that's outside of the allowed range. The maximum number of tweets has been set back to the default of 10.\n"
+    tt.connect_to_endpoint()
+
+    output, err = capfd.readouterr()
+    assert output != [
+        "Enter the twitter username you want to search for recent tweets about: ",
+        "What's the maximum number of tweets you want to include in the calculation? (10-100): ",
+        "Sorry, that's outside of the allowed range. The maximum number of tweets has been set back to the default of 10.\n"]
