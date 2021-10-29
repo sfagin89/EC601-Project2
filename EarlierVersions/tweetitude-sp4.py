@@ -17,11 +17,8 @@ twit = input("Enter the twitter username you want to search for recent tweets ab
 # Used to indicate tweets made to the referenced account
 twitterer = 'to:' + twit
 maxTweets = input("What's the maximum number of tweets you want to include in the calculation? (10-100): ")
-if (int(maxTweets) < 10) or (int(maxTweets) > 100) :
-    print("Sorry, that's outside of the allowed range. The maximum number of tweets has been set back to the default of 10.\n")
-    maxTweets = 10
 if int(maxTweets) > 15:
-    print("Appologies if there's a little wait! Larger Tweet counts can take a little while, but we're working on it!\n")
+    print("Sorry if there's a little wait! Larger Tweet counts can take a little while, but we're working on it!\n")
 
 # To set your environment variables in your terminal run the following line:
 # export 'TOKEN'='<your_bearer_token>'
