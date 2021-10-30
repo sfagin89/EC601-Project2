@@ -19,6 +19,18 @@ To use the program, run the following from the command line while in the same di
 * json
 * google.cloud-language
 
+### Verifying Correct Functionality through Pytest
+
+Two tests are provided to verify functionality of the application.
+* test_MaxTweetRange.py
+  * Tests application response to MaxTweet inputs outside and within the allowed range
+* test_SearchRecent_api_call.py
+  * Tests the return code from the RecentTweet Search API call
+
+  To run the test files with pytest, run the following from the command line while in the same directory as the application and test files:
+
+    python -m pytest
+
 ### Links used for reference while writing this application
 * https://cloud.google.com/natural-language/docs/basics
 * https://developer.twitter.com/en/docs/twitter-api/tweets/search/api-reference/get-tweets-search-recent
