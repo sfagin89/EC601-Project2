@@ -29,7 +29,7 @@ Two tests are provided to verify functionality of the application.
 
   To run the test files with pytest, run the following from the command line while in the same directory as the application and test files:
 
-    python -m pytest
+      python -m pytest
 
 ### Links used for reference while writing this application
 * https://cloud.google.com/natural-language/docs/basics
