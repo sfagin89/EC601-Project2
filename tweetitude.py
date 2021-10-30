@@ -4,6 +4,7 @@
 import requests
 import os
 import json
+import sys
 from google.cloud import language
 
 # To set your environment variables in your terminal run the following line:
@@ -43,7 +44,7 @@ def bearer_oauth(r):
 
 def connect_to_endpoint():
     twit = input("Enter the twitter username you want to search for recent tweets about: ")
-    #twit = "asmongold"
+    #twit = "asmongold" #Hardcoded for testfile singleinput test
     # Used to indicate tweets made by the referenced account
     # twitterer = 'from:' + twit
     # Used to indicate tweets made to the referenced account
@@ -60,7 +61,10 @@ def connect_to_endpoint():
 
     response = requests.request("GET", search_url, auth=bearer_oauth, params=query_params)
     if response.status_code != 200:
-        raise Exception(response.status_code, response.text)
+        print(f'Failed to retrieve tweets: status_code {response.status_code}, response body {response.text}')
+        #raise Exception(response.status_code, response.text)
+        return
+    print("Tweets retrieved", file=sys.stderr)
     return response.json()
 
 
